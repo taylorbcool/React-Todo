@@ -1,13 +1,18 @@
-import React, {Component} from 'react';
-import ReactDom from 'react-dom';
+import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import './components/TodoComponents/Todo.css'
 
 const todoList = [
   {
     id: 1,
-    name: 'Take medicine',
+    name: 'finish app',
     completed: false,
+  },
+  {
+    id: 2,
+    name: 'learn to juggle',
+    completed: true,
   }
 ]
 
@@ -19,7 +24,6 @@ class App extends React.Component {
     super();
     this.state = {
       todoList: todoList,
-
     }
   }
 
@@ -37,8 +41,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <div className='container'>
+        <h2>Welcome to my Todo App!</h2>
         <TodoForm addTodo={this.addTodo} />
         <TodoList todoList={this.state.todoList} />
       </div>
