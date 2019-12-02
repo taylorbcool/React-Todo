@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
+import ReactDom from 'react-dom';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 
 const todoList = [
   {
     id: 1,
-    todo: 'Take medicine',
+    name: 'Take medicine',
     completed: false,
   }
 ]
@@ -24,8 +25,8 @@ class App extends React.Component {
 
   addTodo = newTodoText => {
     const newTodo = {
-      todo: newTodoText,
       id: Date.now(),
+      name: newTodoText,
       completed: false
     }
 
